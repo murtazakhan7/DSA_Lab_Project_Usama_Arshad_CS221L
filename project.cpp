@@ -119,16 +119,30 @@ public:
 };
 int main(){
     graph g;
+    int op;
     ifstream inputfile("cities.txt");
     if(!inputfile.is_open()){
         cerr<<"File not opened successfully!"<<endl;
     }
     string start,destination;
     g.readGraphFromFile("cities.txt");
+    do{
+        cout<<"\t\tWelcome To Pakistan Maps\n\t\tCretaed by\n\t M.Murtaza\tHasan Abbas\tHassan Ahmed\n1.Find shortest path Between two location\n2.Exit";
+        cin>>op;
+        switch(op){
+            case 1:
     cout<<"Enter starting city";
     cin>>start;
     cout<<"Enter destination";
     cin>>destination;
     g.BFS(start,destination);
+    break;
+    case 2:
+    cout<<"Thank you for using our Service";
+    break;
+    default:
+    cout<<"Select Proper Option: ";
+        }
 
-}
+}while(op!=2);
+    }
